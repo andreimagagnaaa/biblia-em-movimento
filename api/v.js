@@ -17,7 +17,7 @@ export default async function handler(req) {
   const h = new Headers();
   h.set('content-type', 'video/mp4');
   h.set('accept-ranges', 'bytes');
-  h.set('cache-control', 'public, max-age=86400');
+  h.set('cache-control', 'private, no-store'); // o cache da CDN ignora o Range
   for (const k of ['content-length', 'content-range', 'etag', 'last-modified']) {
     const v = r.headers.get(k);
     if (v) h.set(k, v);
