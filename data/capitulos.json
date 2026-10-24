@@ -1,0 +1,776 @@
+{
+ "M01-E01-Criacao": {
+  "duracao": 471.6,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "Antes de tudo"
+   },
+   {
+    "inicio_s": 19.43,
+    "titulo": "A primeira página"
+   },
+   {
+    "inicio_s": 64.17,
+    "titulo": "Disse Deus"
+   },
+   {
+    "inicio_s": 114.33,
+    "titulo": "Formar e encher"
+   },
+   {
+    "inicio_s": 164.27,
+    "titulo": "À imagem de Deus"
+   },
+   {
+    "inicio_s": 216.47,
+    "titulo": "O sétimo dia"
+   },
+   {
+    "inicio_s": 240.87,
+    "titulo": "O jardim no Éden"
+   },
+   {
+    "inicio_s": 315.8,
+    "titulo": "Osso dos meus ossos"
+   },
+   {
+    "inicio_s": 375.87,
+    "titulo": "Onde está Jesus"
+   },
+   {
+    "inicio_s": 442.23,
+    "titulo": "Próximo episódio"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M01-E01-Criacao.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 95
+  }
+ },
+ "M01-E02-Queda": {
+  "duracao": 456.8,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "Uma pergunta"
+   },
+   {
+    "inicio_s": 21.67,
+    "titulo": "Ainda no jardim"
+   },
+   {
+    "inicio_s": 53.87,
+    "titulo": "É assim que Deus disse?"
+   },
+   {
+    "inicio_s": 101.63,
+    "titulo": "O fruto"
+   },
+   {
+    "inicio_s": 134.3,
+    "titulo": "Onde você está?"
+   },
+   {
+    "inicio_s": 180.27,
+    "titulo": "A primeira promessa"
+   },
+   {
+    "inicio_s": 230.27,
+    "titulo": "O peso da verdade"
+   },
+   {
+    "inicio_s": 267.5,
+    "titulo": "Roupas de peles"
+   },
+   {
+    "inicio_s": 308.17,
+    "titulo": "A leste do Éden"
+   },
+   {
+    "inicio_s": 339.47,
+    "titulo": "Onde está Jesus"
+   },
+   {
+    "inicio_s": 425.57,
+    "titulo": "Próximo episódio"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M01-E02-Queda.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 92
+  }
+ },
+ "M08-E01-Nabucodonosor": {
+  "duracao": 431.4,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "abertura"
+   },
+   {
+    "inicio_s": 22.47,
+    "titulo": "linha"
+   },
+   {
+    "inicio_s": 60.73,
+    "titulo": "mapa"
+   },
+   {
+    "inicio_s": 99.77,
+    "titulo": "daniel"
+   },
+   {
+    "inicio_s": 138.97,
+    "titulo": "sonho"
+   },
+   {
+    "inicio_s": 219,
+    "titulo": "fornalha"
+   },
+   {
+    "inicio_s": 289.77,
+    "titulo": "arvore"
+   },
+   {
+    "inicio_s": 352.1,
+    "titulo": "confissao"
+   },
+   {
+    "inicio_s": 371.43,
+    "titulo": "jesus"
+   },
+   {
+    "inicio_s": 410.9,
+    "titulo": "fim"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M08-E01-Nabucodonosor.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 87
+  }
+ },
+ "M08-E02-Ezequiel": {
+  "duracao": 411.1,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "abertura"
+   },
+   {
+    "inicio_s": 24.73,
+    "titulo": "contexto"
+   },
+   {
+    "inicio_s": 83.27,
+    "titulo": "tempestade"
+   },
+   {
+    "inicio_s": 111.8,
+    "titulo": "seres"
+   },
+   {
+    "inicio_s": 146.73,
+    "titulo": "rodas"
+   },
+   {
+    "inicio_s": 184.3,
+    "titulo": "trono"
+   },
+   {
+    "inicio_s": 232.13,
+    "titulo": "chamado"
+   },
+   {
+    "inicio_s": 265.63,
+    "titulo": "rolo"
+   },
+   {
+    "inicio_s": 302.67,
+    "titulo": "atalaia"
+   },
+   {
+    "inicio_s": 343.9,
+    "titulo": "jesus"
+   },
+   {
+    "inicio_s": 391.07,
+    "titulo": "fim"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M08-E02-Ezequiel.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 83
+  }
+ },
+ "M08-E03-Cerco": {
+  "duracao": 324.4,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "abertura"
+   },
+   {
+    "inicio_s": 23.27,
+    "titulo": "tijolo"
+   },
+   {
+    "inicio_s": 64.4,
+    "titulo": "deitado"
+   },
+   {
+    "inicio_s": 102.2,
+    "titulo": "pao"
+   },
+   {
+    "inicio_s": 143.3,
+    "titulo": "cabelo"
+   },
+   {
+    "inicio_s": 192.47,
+    "titulo": "montes"
+   },
+   {
+    "inicio_s": 232.87,
+    "titulo": "fimvem"
+   },
+   {
+    "inicio_s": 266.23,
+    "titulo": "jesus"
+   },
+   {
+    "inicio_s": 307.17,
+    "titulo": "fim"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M08-E03-Cerco.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 65
+  }
+ },
+ "M08-E04-Gloria": {
+  "duracao": 453.8,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "A casa vazia"
+   },
+   {
+    "inicio_s": 18.07,
+    "titulo": "Levado pelos cabelos"
+   },
+   {
+    "inicio_s": 51.7,
+    "titulo": "A imagem dos ciúmes"
+   },
+   {
+    "inicio_s": 80.77,
+    "titulo": "Às escuras"
+   },
+   {
+    "inicio_s": 121.43,
+    "titulo": "De costas para Deus"
+   },
+   {
+    "inicio_s": 158.27,
+    "titulo": "A marca na testa"
+   },
+   {
+    "inicio_s": 220.93,
+    "titulo": "Os querubins e as rodas"
+   },
+   {
+    "inicio_s": 259.6,
+    "titulo": "Um coração de carne"
+   },
+   {
+    "inicio_s": 329.83,
+    "titulo": "A glória no monte"
+   },
+   {
+    "inicio_s": 364.37,
+    "titulo": "A glória volta"
+   },
+   {
+    "inicio_s": 433.97,
+    "titulo": "Próximo episódio"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M08-E04-Gloria.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 91
+  }
+ },
+ "M08-E05-Videira": {
+  "duracao": 448.2,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "Abertura"
+   },
+   {
+    "inicio_s": 20.47,
+    "titulo": "Olhos que não veem"
+   },
+   {
+    "inicio_s": 53.87,
+    "titulo": "A bagagem do exílio"
+   },
+   {
+    "inicio_s": 85.37,
+    "titulo": "O príncipe às escuras"
+   },
+   {
+    "inicio_s": 146.5,
+    "titulo": "Não haverá mais demora"
+   },
+   {
+    "inicio_s": 173.73,
+    "titulo": "Paz, quando não há paz"
+   },
+   {
+    "inicio_s": 227.7,
+    "titulo": "Fitas e véus"
+   },
+   {
+    "inicio_s": 256.3,
+    "titulo": "Noé, Daniel e Jó"
+   },
+   {
+    "inicio_s": 317.7,
+    "titulo": "A videira inútil"
+   },
+   {
+    "inicio_s": 363.17,
+    "titulo": "Onde está Jesus"
+   },
+   {
+    "inicio_s": 423.43,
+    "titulo": "Fim"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M08-E05-Videira.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 90
+  }
+ },
+ "M08-E06-Cedro": {
+  "duracao": 458.2,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "Uma história de amor"
+   },
+   {
+    "inicio_s": 16.47,
+    "titulo": "Onde estamos"
+   },
+   {
+    "inicio_s": 47.7,
+    "titulo": "A menina no campo"
+   },
+   {
+    "inicio_s": 86.1,
+    "titulo": "A noiva e a rainha"
+   },
+   {
+    "inicio_s": 126.73,
+    "titulo": "A traição"
+   },
+   {
+    "inicio_s": 172,
+    "titulo": "As duas irmãs"
+   },
+   {
+    "inicio_s": 201.97,
+    "titulo": "A aliança eterna"
+   },
+   {
+    "inicio_s": 243.53,
+    "titulo": "As duas águias"
+   },
+   {
+    "inicio_s": 309.07,
+    "titulo": "O ramo tenro"
+   },
+   {
+    "inicio_s": 348.3,
+    "titulo": "Onde está Jesus"
+   },
+   {
+    "inicio_s": 433.47,
+    "titulo": "Próximo episódio"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M08-E06-Cedro.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 92
+  }
+ },
+ "M08-E07-Responde": {
+  "duracao": 450.9,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "A culpa é de quem?"
+   },
+   {
+    "inicio_s": 18.23,
+    "titulo": "Onde estamos"
+   },
+   {
+    "inicio_s": 38,
+    "titulo": "As uvas verdes"
+   },
+   {
+    "inicio_s": 75.93,
+    "titulo": "Três gerações"
+   },
+   {
+    "inicio_s": 125.93,
+    "titulo": "Convertam-se e vivam"
+   },
+   {
+    "inicio_s": 174.23,
+    "titulo": "Os leões e a videira"
+   },
+   {
+    "inicio_s": 227.17,
+    "titulo": "Os anciãos"
+   },
+   {
+    "inicio_s": 254.43,
+    "titulo": "Por amor do meu nome"
+   },
+   {
+    "inicio_s": 299.53,
+    "titulo": "Debaixo da vara"
+   },
+   {
+    "inicio_s": 346.8,
+    "titulo": "Onde está Jesus"
+   },
+   {
+    "inicio_s": 425.23,
+    "titulo": "Próximo episódio"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M08-E07-Responde.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 91
+  }
+ },
+ "M08-E08-Espada": {
+  "duracao": 469.4,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "Três imagens"
+   },
+   {
+    "inicio_s": 20.47,
+    "titulo": "Onde estamos"
+   },
+   {
+    "inicio_s": 42,
+    "titulo": "A espada afiada"
+   },
+   {
+    "inicio_s": 72,
+    "titulo": "O rei na encruzilhada"
+   },
+   {
+    "inicio_s": 111.73,
+    "titulo": "Tire a coroa"
+   },
+   {
+    "inicio_s": 152.8,
+    "titulo": "Ninguém na brecha"
+   },
+   {
+    "inicio_s": 205.97,
+    "titulo": "Oolá e Oolibá"
+   },
+   {
+    "inicio_s": 244.73,
+    "titulo": "A panela enferrujada"
+   },
+   {
+    "inicio_s": 304.3,
+    "titulo": "O encanto dos seus olhos"
+   },
+   {
+    "inicio_s": 369.17,
+    "titulo": "Onde está Jesus"
+   },
+   {
+    "inicio_s": 443.9,
+    "titulo": "Próximo episódio"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M08-E08-Espada.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 94
+  }
+ },
+ "M08-E09-Tiro": {
+  "duracao": 464.7,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "Palmas na desgraça"
+   },
+   {
+    "inicio_s": 19.27,
+    "titulo": "Onde estamos"
+   },
+   {
+    "inicio_s": 39.37,
+    "titulo": "Os vizinhos"
+   },
+   {
+    "inicio_s": 86.93,
+    "titulo": "A porta quebrada"
+   },
+   {
+    "inicio_s": 118.4,
+    "titulo": "A rocha nua"
+   },
+   {
+    "inicio_s": 172.67,
+    "titulo": "O grande navio"
+   },
+   {
+    "inicio_s": 223.53,
+    "titulo": "Eu sou um deus"
+   },
+   {
+    "inicio_s": 277.33,
+    "titulo": "O querubim do Éden"
+   },
+   {
+    "inicio_s": 339.27,
+    "titulo": "Sidom e a promessa"
+   },
+   {
+    "inicio_s": 369.57,
+    "titulo": "Onde está Jesus"
+   },
+   {
+    "inicio_s": 440.17,
+    "titulo": "Próximo episódio"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M08-E09-Tiro.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 93
+  }
+ },
+ "M08-E10-Egito": {
+  "duracao": 455.3,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "O dono do rio"
+   },
+   {
+    "inicio_s": 22.63,
+    "titulo": "Onde estamos"
+   },
+   {
+    "inicio_s": 53.57,
+    "titulo": "O monstro do Nilo"
+   },
+   {
+    "inicio_s": 105.4,
+    "titulo": "O bordão de cana"
+   },
+   {
+    "inicio_s": 146.83,
+    "titulo": "O salário do rei"
+   },
+   {
+    "inicio_s": 185.5,
+    "titulo": "O braço quebrado"
+   },
+   {
+    "inicio_s": 221.07,
+    "titulo": "O grande cedro"
+   },
+   {
+    "inicio_s": 278.83,
+    "titulo": "A descida à cova"
+   },
+   {
+    "inicio_s": 340.7,
+    "titulo": "Onde está Jesus"
+   },
+   {
+    "inicio_s": 430.57,
+    "titulo": "Próximo episódio"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M08-E10-Egito.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 92
+  }
+ },
+ "M08-E11-Pastor": {
+  "duracao": 448.7,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "A notícia"
+   },
+   {
+    "inicio_s": 21.13,
+    "titulo": "Onde estamos"
+   },
+   {
+    "inicio_s": 58.07,
+    "titulo": "O atalaia de novo"
+   },
+   {
+    "inicio_s": 89.73,
+    "titulo": "Como poderemos viver?"
+   },
+   {
+    "inicio_s": 133.1,
+    "titulo": "A cidade caiu!"
+   },
+   {
+    "inicio_s": 183.87,
+    "titulo": "A canção de amor"
+   },
+   {
+    "inicio_s": 226.9,
+    "titulo": "Os maus pastores"
+   },
+   {
+    "inicio_s": 269.03,
+    "titulo": "Eu mesmo buscarei"
+   },
+   {
+    "inicio_s": 315.8,
+    "titulo": "O meu servo Davi"
+   },
+   {
+    "inicio_s": 353.57,
+    "titulo": "Onde está Jesus"
+   },
+   {
+    "inicio_s": 424.17,
+    "titulo": "Próximo episódio"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M08-E11-Pastor.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 90
+  }
+ },
+ "M08-E12-Salmos": {
+  "duracao": 460.3,
+  "capitulos": [
+   {
+    "inicio_s": 0,
+    "titulo": "Quando dói cantar"
+   },
+   {
+    "inicio_s": 19.6,
+    "titulo": "Onde estamos"
+   },
+   {
+    "inicio_s": 52.47,
+    "titulo": "O santuário em chamas"
+   },
+   {
+    "inicio_s": 100.5,
+    "titulo": "As harpas nos salgueiros"
+   },
+   {
+    "inicio_s": 144.2,
+    "titulo": "Um grito difícil"
+   },
+   {
+    "inicio_s": 206.43,
+    "titulo": "Desperta, Senhor!"
+   },
+   {
+    "inicio_s": 240.33,
+    "titulo": "A coroa no chão"
+   },
+   {
+    "inicio_s": 306.4,
+    "titulo": "Tu permaneces"
+   },
+   {
+    "inicio_s": 355.17,
+    "titulo": "Onde está Jesus"
+   },
+   {
+    "inicio_s": 433.6,
+    "titulo": "Próximo episódio"
+   }
+  ],
+  "sprite": {
+   "arquivo": "img/sprites/M08-E12-Salmos.jpg",
+   "intervalo": 5,
+   "largura": 160,
+   "altura": 90,
+   "colunas": 10,
+   "quadros": 93
+  }
+ }
+}

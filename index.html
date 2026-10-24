@@ -14,305 +14,55 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">
-<style>
-/* Layout: sala de cinema noturna. Capa com mural de quadros da série atrás do título dourado; fileiras por módulo; player em sobreposição. */
-:root {
-  --noite: #0f0d0b;
-  --noite-2: #1a1612;
-  --linha: #3a3128;
-  --pergaminho: #efe4cc;
-  --apagado: #a99a82;
-  --ouro: #d9a441;
-  --ouro-claro: #f2cf7e;
-  --f-titulo: 'Cinzel', 'Trajan Pro', Georgia, serif;
-  --f-texto: 'EB Garamond', Garamond, Georgia, serif;
-  --f-ui: 'Inter', system-ui, -apple-system, sans-serif;
-  color-scheme: dark;
-}
-* { box-sizing: border-box; }
-html, body { margin: 0; }
-body { background: var(--noite); color: var(--pergaminho); font-family: var(--f-ui); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-img { max-width: 100%; }
-[hidden] { display: none !important; }
-.gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-@media (min-width: 900px) { .gutter { padding-left: max(48px, env(safe-area-inset-left, 0px)); padding-right: max(48px, env(safe-area-inset-right, 0px)); } }
-
-header.topo { position: absolute; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 4; display: flex; align-items: center; justify-content: space-between; padding-block: 22px; }
-.marca { font-family: var(--f-titulo); font-weight: 700; letter-spacing: .1em; font-size: 15px; color: var(--ouro-claro); }
-.marca span { color: var(--pergaminho); font-family: var(--f-texto); font-style: italic; font-weight: 500; letter-spacing: 0; font-size: 17px; }
-.topo nav { display: flex; gap: 20px; font-size: 13px; }
-.topo nav a { color: var(--apagado); text-decoration: none; }
-.topo nav a:hover { color: var(--pergaminho); }
-@media (max-width: 560px) { .topo nav { display: none; } }
-
-/* ---------- capa ---------- */
-.capa-serie { position: relative; overflow: hidden; isolation: isolate; min-height: clamp(560px, 88vh, 860px); display: grid; place-items: center; text-align: center; }
-.mural { position: absolute; inset: -30% -20%; z-index: -2; display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; transform: rotate(-9deg); opacity: .62; }
-.mural .col { display: grid; gap: 14px; align-content: start; animation: subir 70s linear infinite; }
-.mural .col:nth-child(even) { animation-name: descer; margin-top: -120px; }
-.mural img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; display: block; }
-@keyframes subir { from { transform: translateY(0); } to { transform: translateY(-50%); } }
-@keyframes descer { from { transform: translateY(-50%); } to { transform: translateY(0); } }
-@media (max-width: 700px) { .mural { grid-template-columns: repeat(3, 1fr); inset: -20% -40%; } .mural .col:nth-child(n+4) { display: none; } }
-.capa-serie::before { content: ""; position: absolute; inset: 0; z-index: -1;
-  background:
-    radial-gradient(ellipse 60% 55% at 50% 48%, color-mix(in srgb, var(--noite) 88%, transparent) 0%, color-mix(in srgb, var(--noite) 70%, transparent) 45%, color-mix(in srgb, var(--noite) 30%, transparent) 100%),
-    linear-gradient(180deg, var(--noite) 0%, transparent 18%, transparent 72%, var(--noite) 100%); }
-.luz { position: absolute; z-index: -1; left: 50%; top: 44%; width: min(900px, 120vw); aspect-ratio: 1; transform: translate(-50%, -50%); background: radial-gradient(circle, color-mix(in srgb, var(--ouro) 22%, transparent) 0%, transparent 60%); pointer-events: none; }
-
-.capa-serie .conteudo { display: grid; gap: 18px; justify-items: center; padding-block: 120px 80px; max-width: 900px; }
-.eyebrow { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--ouro); font-weight: 600; }
-.wordmark { margin: 0; display: grid; justify-items: center; line-height: 1; }
-.wordmark .b { font-family: var(--f-titulo); font-weight: 900; font-size: clamp(64px, 14vw, 168px); letter-spacing: .08em; padding-left: .08em;
-  background: linear-gradient(180deg, var(--ouro-claro) 0%, var(--ouro) 55%, #9c7022 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
-  filter: drop-shadow(0 4px 30px color-mix(in srgb, var(--ouro) 35%, transparent)); }
-.wordmark .m { font-family: var(--f-texto); font-style: italic; font-weight: 500; font-size: clamp(28px, 5vw, 54px); color: var(--pergaminho); margin-top: -.12em; letter-spacing: .01em; }
-.traco { width: min(420px, 70vw); height: 22px; }
-.traco path { fill: none; stroke: var(--ouro); stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 600; stroke-dashoffset: 0; animation: desenhar 2.4s ease-out both .3s; }
-@keyframes desenhar { from { stroke-dashoffset: 600; } to { stroke-dashoffset: 0; } }
-.tagline { font-family: var(--f-texto); font-size: clamp(19px, 2.3vw, 24px); line-height: 1.4; margin: 0; max-width: 34ch; text-wrap: balance; }
-.numeros { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px; font-size: 13px; color: var(--apagado); letter-spacing: .04em; font-variant-numeric: tabular-nums; }
-.numeros b { color: var(--pergaminho); font-weight: 600; }
-.acoes { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 6px; }
-.btn { font: 600 15px var(--f-ui); border: 0; border-radius: 6px; padding: 13px 24px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
-.btn svg { width: 18px; height: 18px; fill: currentColor; }
-.btn-ouro { background: var(--ouro-claro); color: var(--noite); }
-.btn-ouro:hover { background: var(--pergaminho); }
-.btn-vidro { background: color-mix(in srgb, var(--pergaminho) 14%, transparent); color: var(--pergaminho); backdrop-filter: blur(6px); }
-.btn-vidro:hover { background: color-mix(in srgb, var(--pergaminho) 24%, transparent); }
-.btn:focus-visible, .card:focus-visible, .fechar:focus-visible, .qual button:focus-visible { outline: 2px solid var(--ouro-claro); outline-offset: 3px; }
-
-/* ---------- fileiras ---------- */
-main { display: grid; gap: 44px; padding-block: 0 64px; margin-top: -40px; position: relative; z-index: 2; }
-.fileira { display: grid; gap: 12px; min-width: 0; }
-.fileira h2 { font-family: var(--f-titulo); font-weight: 500; font-size: clamp(18px, 2.2vw, 22px); margin: 0; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-.fileira h2 small { font-family: var(--f-texto); font-style: italic; font-size: 16px; color: var(--apagado); letter-spacing: 0; }
-.trilho { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(240px, 300px); gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-block: 6px 14px; scrollbar-width: thin; scrollbar-color: var(--linha) transparent; }
-@media (max-width: 520px) { .trilho { grid-auto-columns: 78%; } }
-
-.card { scroll-snap-align: start; background: var(--noite-2); border: 0; padding: 0; text-align: left; color: inherit; cursor: pointer; border-radius: 6px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; transition: transform .2s ease; font: inherit; }
-.card:hover { transform: translateY(-3px); }
-.thumb { position: relative; aspect-ratio: 16 / 9; max-width: 100%; background: var(--noite); }
-.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.thumb .num { position: absolute; left: 10px; top: 8px; font: 600 11px var(--f-ui); letter-spacing: .12em; color: var(--ouro-claro); background: color-mix(in srgb, var(--noite) 70%, transparent); padding: 3px 7px; border-radius: 3px; }
-.thumb .dur { position: absolute; right: 10px; bottom: 10px; font: 500 12px var(--f-ui); font-variant-numeric: tabular-nums; background: color-mix(in srgb, var(--noite) 75%, transparent); padding: 2px 6px; border-radius: 3px; }
-.thumb .play { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; transition: opacity .2s; background: color-mix(in srgb, var(--noite) 35%, transparent); }
-.thumb .play svg { width: 46px; height: 46px; fill: var(--ouro-claro); }
-.card:hover .play, .card:focus-visible .play { opacity: 1; }
-.progresso { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: color-mix(in srgb, var(--pergaminho) 20%, transparent); }
-.progresso i { display: block; height: 100%; background: var(--ouro); }
-.info { padding: 12px 14px 14px; display: grid; gap: 6px; align-content: start; min-width: 0; }
-.info h3 { font-family: var(--f-texto); font-weight: 600; font-size: 18px; line-height: 1.2; margin: 0; text-wrap: balance; }
-.info p { font-family: var(--f-texto); font-size: 15px; line-height: 1.35; color: var(--apagado); margin: 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.card.breve { cursor: default; }
-.card.breve:hover { transform: none; }
-.card.breve .thumb { display: grid; place-items: center; background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--ouro) 16%, var(--noite)) 0%, var(--noite) 70%); }
-.card.breve .thumb b { font: 500 11px var(--f-ui); letter-spacing: .16em; text-transform: uppercase; color: var(--ouro); border: 1px solid var(--linha); padding: 5px 10px; border-radius: 99px; }
-
-.sobre { display: grid; gap: 10px; max-width: 70ch; font-family: var(--f-texto); font-size: 17px; line-height: 1.5; color: var(--apagado); border-top: 1px solid var(--linha); padding-top: 28px; }
-.sobre strong { color: var(--pergaminho); font-weight: 600; }
-footer { padding-block: 0 40px; font-size: 12px; color: var(--apagado); }
-
-/* ---------- player ---------- */
-.palco { position: fixed; inset: 0; z-index: 10; background: color-mix(in srgb, var(--noite) 97%, transparent); display: grid; place-items: center; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); overflow-y: auto; }
-.palco .caixa { width: min(1200px, 100%); display: grid; gap: 14px; padding-block: 56px 24px; }
-.palco video { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 6px; display: block; }
-.palco .barra { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
-.palco .barra > div { min-width: 0; }
-.palco h2 { font-family: var(--f-titulo); font-weight: 500; font-size: clamp(18px, 2.4vw, 26px); margin: 0; text-wrap: balance; }
-.palco .sub { font-family: var(--f-texto); font-size: 17px; color: var(--apagado); margin: 4px 0 0; max-width: 70ch; }
-.palco .lado { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-.qual { display: inline-flex; border: 1px solid var(--linha); border-radius: 6px; overflow: hidden; }
-.qual button { font: 500 13px var(--f-ui); background: none; border: 0; color: var(--apagado); padding: 9px 12px; cursor: pointer; }
-.qual button[aria-pressed="true"] { background: color-mix(in srgb, var(--ouro) 22%, transparent); color: var(--ouro-claro); }
-.fechar { position: absolute; top: calc(12px + env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); background: none; border: 0; color: var(--pergaminho); font: 500 14px var(--f-ui); cursor: pointer; padding: 8px; }
-.aviso { font-size: 12px; color: var(--apagado); }
-@media (prefers-reduced-motion: reduce) { .mural .col, .traco path { animation: none; } .card, .thumb .play { transition: none; } }
-</style>
+<link rel="preload" href="data/episodios.json" as="fetch" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/player.css">
 </head>
 <body>
 
-<header class="topo gutter">
-  <div class="marca">BÍBLIA <span>em Movimento</span></div>
-  <nav><a href="#M01">Os Princípios</a><a href="#M08">O Exílio</a><a href="#sobre">Sobre</a></nav>
+<header class="topo" id="topo">
+  <a class="marca" href="#" id="marca">BÍBLIA <span>em Movimento</span></a>
+  <nav aria-label="Seções"><a href="#linha">Linha do tempo</a></nav>
+  <div class="busca" id="busca-caixa" role="search">
+    <button class="busca-abrir" id="busca-abrir" type="button" aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+    <input type="search" id="busca" placeholder="Título ou livro" aria-label="Buscar episódio por título ou livro" autocomplete="off" enterkeyhint="search">
+  </div>
 </header>
 
-<section class="capa-serie gutter">
+<section class="capa gutter" id="inicio">
   <div class="mural" id="mural" aria-hidden="true"></div>
   <div class="luz"></div>
-  <div class="conteudo">
-    <div class="eyebrow">Uma série em vídeo-aulas animadas</div>
+  <div class="capa-conteudo">
     <h1 class="wordmark"><span class="b">BÍBLIA</span><span class="m">em Movimento</span></h1>
     <svg class="traco" viewBox="0 0 420 22" aria-hidden="true"><path d="M4 12 C 70 4, 140 18, 200 10 S 330 5, 416 12"/></svg>
-    <p class="tagline">A Bíblia inteira, na ordem em que aconteceu. E, em cada episódio, onde está Jesus.</p>
-    <div class="numeros"><span><b>66</b> livros</span><span><b>13</b> módulos</span><span><b>375</b> episódios</span><span>NAA</span></div>
+    <p class="tagline">A Bíblia inteira, na ordem em que aconteceu.</p>
     <div class="acoes">
-      <button class="btn btn-ouro" id="btn-assistir" type="button"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>Assistir o primeiro episódio</button>
-      <a class="btn btn-vidro" href="#M08">Ver o Exílio</a>
+      <button class="btn btn-ouro" id="btn-principal" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg><span>Assistir</span></button>
+      <button class="btn btn-vidro" id="btn-info" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>Mais informações</button>
     </div>
   </div>
+  <div class="destaque" id="destaque" hidden></div>
 </section>
 
-<main class="gutter" id="fileiras"></main>
-<footer class="gutter">Bíblia em Movimento · Os cartões de versículo usam texto provisório, a conferir com a Nova Almeida Atualizada.</footer>
+<main class="gutter" id="catalogo" aria-label="Episódios"></main>
+<section class="resultados gutter" id="resultados" hidden aria-live="polite"></section>
 
-<div class="palco gutter" id="palco" hidden role="dialog" aria-modal="true" aria-labelledby="p-titulo">
-  <button class="fechar" id="fechar" type="button">Fechar ✕</button>
-  <div class="caixa">
-    <video id="video" controls playsinline preload="metadata"></video>
-    <div class="barra">
-      <div>
-        <h2 id="p-titulo"></h2>
-        <p class="sub" id="p-sub"></p>
-      </div>
-      <div class="lado">
-        <div class="qual" role="group" aria-label="Qualidade">
-          <button type="button" data-q="720" id="q720">720p</button>
-          <button type="button" data-q="1080" id="q1080">1080p</button>
-        </div>
-        <button class="btn btn-vidro" id="p-prox" type="button">Próximo episódio ›</button>
-      </div>
-    </div>
-  </div>
+<section class="linha gutter" id="linha" aria-labelledby="linha-t">
+  <h2 id="linha-t">Linha do tempo</h2>
+  <div class="linha-trilho" id="linha-trilho"></div>
+</section>
+
+<footer class="gutter">
+  <p>Bíblia em Movimento · 13 módulos, de Gênesis ao Apocalipse, em ordem cronológica. Deus e Jesus aparecem só como luz.</p>
+  <p class="naa">Versículos da Nova Almeida Atualizada; alguns cartões ainda usam texto provisório, em conferência.</p>
+</footer>
+
+<div class="painel" id="painel" hidden>
+  <div class="painel-caixa" id="painel-caixa" role="dialog" aria-modal="true" aria-labelledby="pn-titulo" tabindex="-1"></div>
 </div>
 
-<script>
-const GH = 'https://github.com/andreimagagnaaa/biblia-em-movimento/releases/download/videos/';
-// Safari exige o tipo video/mp4, que o GitHub não envia: nele o vídeo passa pelo proxy da Vercel (vercel.json).
-const SAFARI = /^((?!chrome|android|crios|fxios|edg).)*safari/i.test(navigator.userAgent);
-const urlVideo = (arq, q) => (SAFARI ? '/v/' : GH) + `${arq}-${q}.mp4`;
-
-const MODULOS = [
-  { id: 'M01', nome: 'Os Princípios', sub: 'Gênesis 1–11', eps: [
-    { id: 'M01-E01', arq: 'M01-E01-Criacao', titulo: 'No princípio: a criação', dur: 472, sin: 'Deus cria tudo pela sua palavra, faz o ser humano à sua imagem e o coloca no jardim para viver com ele.' },
-    { id: 'M01-E02', arq: 'M01-E02-Queda', titulo: 'A queda e a primeira promessa', dur: 456, sin: 'A desobediência traz vergonha, morte e exílio do jardim, mas Deus veste o casal e promete vitória sobre a serpente.' },
-    { id: 'M01-E03', titulo: 'Caim, Abel e a linhagem de Sete', breve: true, sin: 'O pecado se espalha da família para a cidade, mas uma linhagem invoca o nome do Senhor.' },
-    { id: 'M01-E04', titulo: 'O dilúvio', breve: true, sin: 'Deus julga a violência da terra e salva Noé e sua família na arca, recomeçando a criação.' },
-    { id: 'M01-E05', titulo: 'A aliança com Noé e as nações', breve: true, sin: 'Deus firma uma aliança com toda a criação, marcada pelo arco-íris.' },
-    { id: 'M01-E06', titulo: 'A torre de Babel', breve: true, sin: 'A humanidade tenta fazer um nome para si, Deus confunde as línguas, e a genealogia chega a Abrão.' },
-  ]},
-  { id: 'M08', nome: 'O Exílio', sub: 'Daniel e Ezequiel na Babilônia', eps: [
-    { id: 'M08-E01', arq: 'M08-E01-Nabucodonosor', titulo: 'Nabucodonosor: o rei que aprendeu quem reina', dur: 431, sin: 'Daniel e os amigos permanecem fiéis na Babilônia; a estátua, a fornalha e a loucura do rei ensinam que o Altíssimo reina.' },
-    { id: 'M08-E02', arq: 'M08-E02-Ezequiel', titulo: 'Ezequiel vê a glória junto ao rio', dur: 411, sin: 'Entre os exilados, Ezequiel vê o trono de Deus sobre rodas, come o rolo e é posto como atalaia.' },
-    { id: 'M08-E03', arq: 'M08-E03-Cerco', titulo: 'Ezequiel encena o cerco', dur: 324, sin: 'Ezequiel deita de lado, raspa o cabelo e encena o cerco de Jerusalém: o fim está chegando.' },
-    { id: 'M08-E04', arq: 'M08-E04-Gloria', titulo: 'A glória deixa o templo', dur: 454, sin: 'Ezequiel vê idolatria no templo e a glória do Senhor saindo para o monte a leste; Deus promete um coração de carne.' },
-    { id: 'M08-E05', arq: 'M08-E05-Videira', titulo: 'Falsos profetas e a videira inútil', dur: 448, sin: 'Ezequiel denuncia os profetas que dizem "Paz" e afirma que nem Noé, Daniel e Jó salvariam a cidade.' },
-    { id: 'M08-E06', arq: 'M08-E06-Cedro', titulo: 'A esposa infiel e o ramo de cedro', dur: 458, sin: 'Jerusalém é a menina abandonada que Deus amou e que o traiu; e Deus plantará um ramo tenro num monte alto.' },
-    { id: 'M08-E07', arq: 'M08-E07-Responde', titulo: 'Cada um responde por si', dur: 451, sin: 'A alma que pecar, essa morrerá; mas Deus não tem prazer na morte do perverso: convertam-se e vivam.' },
-    { id: 'M08-E08', arq: 'M08-E08-Espada', titulo: 'A espada e a panela', dur: 469, sin: 'A espada da Babilônia está afiada, o cerco começa e a esposa de Ezequiel morre.' },
-    { id: 'M08-E09', arq: 'M08-E09-Tiro', titulo: 'Contra Amom, Moabe, Edom, Filístia e Tiro', dur: 465, sin: 'Deus julga os vizinhos que zombaram de Jerusalém e o rei orgulhoso de Tiro, que se dizia um deus.' },
-    { id: 'M08-E10', arq: 'M08-E10-Egito', titulo: 'Contra o Egito', dur: 455, sin: 'O faraó, o grande monstro do Nilo, será humilhado, e o Egito descerá à cova com as nações.' },
-    { id: 'M08-E11', arq: 'M08-E11-Pastor', titulo: 'O atalaia e o bom pastor', dur: 449, sin: 'Chega a notícia: "A cidade caiu". Deus denuncia os maus pastores e promete ele mesmo apascentar o povo.' },
-    { id: 'M08-E12', arq: 'M08-E12-Salmos', titulo: 'Cânticos junto aos rios da Babilônia', dur: 460, sin: 'Lamentos do povo exilado: o templo em ruínas, a aliança com Davi aparentemente quebrada e a saudade de Sião.' },
-  ]},
-  { id: 'M02', nome: 'Os Patriarcas', sub: 'Jó, Abraão, Isaque, Jacó e José', eps: [
-    { id: 'M02-E01', titulo: 'Jó: o justo provado', breve: true, sin: 'Um homem íntegro perde tudo e, mesmo sem entender, se recusa a amaldiçoar a Deus.' },
-    { id: 'M02-E02', titulo: 'Jó: o lamento e o primeiro amigo', breve: true, sin: 'Jó amaldiçoa o dia em que nasceu, Elifaz afirma que nenhum inocente perece, e Jó responde que a vida é um sopro.' },
-    { id: 'M02-E03', titulo: 'Jó: quem será o árbitro?', breve: true, sin: 'Bildade e Zofar insistem que todo sofrimento é castigo; Jó deseja um árbitro entre ele e Deus.' },
-  ]},
-];
-
-// mural da capa: 26 quadros em 6 colunas, cada coluna duplicada para o loop
-(() => {
-  const ids = Array.from({ length: 26 }, (_, i) => String(i + 1).padStart(2, '0'));
-  const cols = Array.from({ length: 6 }, () => []);
-  ids.forEach((id, i) => cols[i % 6].push(id));
-  document.getElementById('mural').innerHTML = cols.map(c => {
-    const imgs = c.map(id => `<img src="img/m/${id}.jpg" alt="" loading="eager" decoding="async">`).join('');
-    return `<div class="col">${imgs}${imgs}</div>`;
-  }).join('');
-})();
-
-const todos = MODULOS.flatMap(m => m.eps.map(e => ({ ...e, modulo: m }))).filter(e => !e.breve);
-const fmt = s => `${Math.floor(s / 60)} min`;
-const ler = k => { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } };
-const gravar = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
-const prog = () => ler('bem-progresso') || {};
-let qualidade = ler('bem-qualidade') || ((screen.width * (devicePixelRatio || 1) >= 1600 && !(navigator.connection && navigator.connection.saveData)) ? '1080' : '720');
-
-const ICONE_PLAY = '<svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>';
-
-function card(e) {
-  const n = e.id.split('-')[1].replace('E', 'EP ');
-  if (e.breve) return `<div class="card breve"><div class="thumb"><span class="num">${n}</span><b>Em produção</b></div><div class="info"><h3>${e.titulo}</h3><p>${e.sin}</p></div></div>`;
-  const p = prog()[e.id];
-  const pct = p ? Math.min(100, Math.round(p * 100)) : 0;
-  return `<button class="card" type="button" data-ep="${e.id}" aria-label="Assistir ${e.titulo}">
-    <div class="thumb"><img src="img/c/${e.arq}.jpg" alt="" loading="lazy"><span class="num">${n}</span><span class="dur">${fmt(e.dur)}</span><span class="play">${ICONE_PLAY}</span>${pct > 2 ? `<span class="progresso"><i style="width:${pct}%"></i></span>` : ''}</div>
-    <div class="info"><h3>${e.titulo}</h3><p>${e.sin}</p></div></button>`;
-}
-
-function render() {
-  const p = prog();
-  const continuar = todos.filter(e => p[e.id] > 0.02 && p[e.id] < 0.95);
-  let html = '';
-  if (continuar.length) html += `<section class="fileira"><h2>Continuar assistindo</h2><div class="trilho">${continuar.map(card).join('')}</div></section>`;
-  for (const m of MODULOS) {
-    const prontos = m.eps.filter(e => !e.breve).length;
-    html += `<section class="fileira" id="${m.id}"><h2>${m.id} · ${m.nome} <small>${m.sub} · ${prontos ? prontos + (prontos > 1 ? ' prontos' : ' pronto') : 'em breve'}</small></h2><div class="trilho">${m.eps.map(card).join('')}</div></section>`;
-  }
-  html += `<section class="sobre" id="sobre"><p><strong>Como funciona.</strong> A série segue a ordem cronológica dos acontecimentos, não a ordem dos livros. São 13 módulos, de Gênesis ao Apocalipse. O Exílio foi o piloto; agora a produção recomeça pelos Princípios.</p><p>Deus e Jesus nunca aparecem com rosto, só como luz. Os versículos são da Nova Almeida Atualizada.</p></section>`;
-  document.getElementById('fileiras').innerHTML = html;
-}
-
-const palco = document.getElementById('palco');
-const video = document.getElementById('video');
-let atual = null;
-
-function marcarQualidade() {
-  for (const b of document.querySelectorAll('.qual button')) b.setAttribute('aria-pressed', String(b.dataset.q === qualidade));
-}
-function carregar(e, inicio) {
-  video.src = urlVideo(e.arq, qualidade);
-  video.poster = `img/c/${e.arq}.jpg`;
-  video.addEventListener('loadedmetadata', function f() {
-    video.removeEventListener('loadedmetadata', f);
-    if (inicio != null) video.currentTime = inicio;
-  });
-  video.play().catch(() => {});
-}
-function abrir(id) {
-  const e = todos.find(x => x.id === id);
-  if (!e) return;
-  atual = e;
-  document.getElementById('p-titulo').textContent = `${e.modulo.nome} · ${e.id.split('-')[1].replace('E', 'Episódio ')}: ${e.titulo}`;
-  document.getElementById('p-sub').textContent = e.sin;
-  document.getElementById('p-prox').hidden = todos.indexOf(e) === todos.length - 1;
-  marcarQualidade();
-  palco.hidden = false;
-  document.body.style.overflow = 'hidden';
-  const p = prog()[e.id];
-  carregar(e, p > 0.02 && p < 0.95 ? p * e.dur : null);
-  document.getElementById('fechar').focus();
-}
-function fechar() { video.pause(); video.removeAttribute('src'); video.load(); palco.hidden = true; document.body.style.overflow = ''; render(); }
-function proximo() { const i = todos.indexOf(atual); if (i < todos.length - 1) abrir(todos[i + 1].id); else fechar(); }
-
-let ultimo = 0;
-video.addEventListener('timeupdate', () => {
-  if (!atual || !video.duration) return;
-  const agora = Date.now();
-  if (agora - ultimo < 3000) return;
-  ultimo = agora;
-  const p = prog(); p[atual.id] = video.currentTime / video.duration; gravar('bem-progresso', p);
-});
-video.addEventListener('ended', () => { const p = prog(); p[atual.id] = 1; gravar('bem-progresso', p); proximo(); });
-// se o 1080p falhar (rede ou arquivo), cai para 720p
-video.addEventListener('error', () => { if (atual && qualidade === '1080') { qualidade = '720'; marcarQualidade(); carregar(atual, video.currentTime || null); } });
-
-document.querySelector('.qual').addEventListener('click', ev => {
-  const b = ev.target.closest('button[data-q]');
-  if (!b || b.dataset.q === qualidade || !atual) return;
-  qualidade = b.dataset.q; gravar('bem-qualidade', qualidade); marcarQualidade();
-  const t = video.currentTime;
-  carregar(atual, t);
-});
-document.getElementById('fileiras').addEventListener('click', ev => { const c = ev.target.closest('[data-ep]'); if (c) abrir(c.dataset.ep); });
-document.getElementById('fechar').addEventListener('click', fechar);
-document.getElementById('p-prox').addEventListener('click', proximo);
-document.getElementById('btn-assistir').addEventListener('click', () => abrir('M01-E01'));
-document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && !palco.hidden) fechar(); });
-render();
-</script>
+<script src="js/player.js" defer></script>
+<script src="js/catalogo.js" defer></script>
 </body>
 </html>
